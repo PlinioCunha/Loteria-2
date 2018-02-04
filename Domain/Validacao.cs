@@ -40,17 +40,17 @@ namespace Loteria.Domain
 
 
 
-        private bool VerificarRepetidos(IEnumerable<int> numeros)
+        public bool VerificarRepetidos(IEnumerable<int> numeros)
         {
             return !numeros.GroupBy(a => a).Any(a => a.Count() > 1);
         }
 
-        private bool VerificarQuantidadeNumeros(IEnumerable<int> numeros, int qtdNumeros)
+        public bool VerificarQuantidadeNumeros(IEnumerable<int> numeros, int qtdNumeros)
         {
             return numeros.Count().Equals(qtdNumeros);
         }
 
-        private bool VerificarIntervalo(IEnumerable<int> numeros, int numeroMaximo)
+        public bool VerificarIntervalo(IEnumerable<int> numeros, int numeroMaximo)
         {
             return (numeros.Min() > 0 && numeros.Max() <= numeroMaximo);
 
